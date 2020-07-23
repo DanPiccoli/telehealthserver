@@ -24,7 +24,7 @@ const entriesRouter = require('./routes/journalentries');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
-app.use('entries', entriesRouter);
+app.use('/entries', entriesRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
