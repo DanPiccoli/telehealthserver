@@ -10,12 +10,12 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const prompt = req.body.prompt;
   const response = req.body.response;
-  const date = Date.parse(req.body.date);
+  //const date = Date.parse(req.body.date);
 
   const newJournalEntry = new JournalEntry({
     prompt,
 	response,
-    date,
+    //date,
   });
 
   newJournalEntry.save()
