@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const entrySchema = new Schema({
 	prompt: {type: String, required: true},
 	response: {type: String, required: true},
+	date: {type: Date, required: true},
 },{
 	timestamps: true,
 });

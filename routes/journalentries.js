@@ -10,10 +10,12 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const prompt = req.body.prompt;
   const response = req.body.response;
+  const date = Date.parse(req.body.date);
 
   const newEntry = new Entry({
     prompt,
     response,
+	date,
   });
 
   newEntry.save()
@@ -36,6 +38,7 @@ router.route('/update/:id').post((req, res) => {
     .then(entry => {
       entry.prompt = req.body.prompt;
       entry.response= req.body.response;
+	  entry.date= Date.parse(req.body.date);
       
       entry.save()
         .then(() => res.json('Entry updated!'))
